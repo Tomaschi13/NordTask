@@ -38,7 +38,7 @@ def extract_trends(date_start=None, date_end=None):
     else:
         date_end_str = date_end
     if not date_start:
-        date_start = date_end - timedelta(days=8)
+        date_start = date_end - timedelta(days=7)
         date_start_str = date_start.strftime('%Y-%m-%d')
     else:
         date_start_str = date_start
@@ -151,11 +151,11 @@ def upload_trends(**context):
     required_field = {'name': 'country', 'type': 'string', 'mode': 'REQUIRED'}
     schema.append(required_field)
 
-    project_id = 'nordtask-380118'
-    dataset_id ='nord_task_20230309210212744066'
-    table_id = 'nord_task4'
+    project_id = 'homework-data2020'
+    dataset_id ='data_engineer'
+    table_id = 'tt_search_term_rankings'
 
-    key_path = '/home/airflow/gcs/data/nordtask-380118-e47f1c1c973f.json'
+    key_path = '/path'
     credentials = Credentials.from_service_account_file(key_path)
 
     pandas_gbq.to_gbq(df, f"{dataset_id}.{table_id}", project_id=project_id, credentials=credentials, if_exists='append')
