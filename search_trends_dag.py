@@ -1,17 +1,14 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from datetime import datetime, timedelta
 import time
 from selenium import webdriver
-import ast
-import json
 from selenium.webdriver.common.by import By
 import pandas as pd
-from datetime import datetime
 import pandas_gbq
-from google.cloud import bigquery
+import ast
 from google.oauth2.service_account import Credentials
+
 
 default_args = {
     'owner': 'airflow',
