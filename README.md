@@ -1,4 +1,4 @@
-# NordTask
+# Google trends rank
 
 This repository contains a DAG (Directed Acyclic Graph) implemented in Airflow to extract, transform and load Google Trends data. The DAG is designed to run weekly and extract the search term rankings for a set of countries for a specified time period. The extracted data is transformed and uploaded to a Google BigQuery table.
 
